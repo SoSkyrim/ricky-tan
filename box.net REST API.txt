@@ -1,0 +1,9 @@
+http://www.box.net/api/1.0/rest?action=get_ticket&api_key=b4ejygdxlfmeyz5s9c09ivc4lkv9zmuk
+
+http://www.box.net/api/1.0/rest?action=get_auth_token&api_key=b4ejygdxlfmeyz5s9c09ivc4lkv9zmuk&ticket=f5ab223uc84bhr5yd3en3qsbzvalqelq
+
+http://www.box.net/api/1.0/auth/f5ab223uc84bhr5yd3en3qsbzvalqelq
+
+http://upload.box.net/api/upload/<auth_token>/<folder_id>
+
+http://www.box.net/api/1.0/download/<auth_token>/<file_id>
