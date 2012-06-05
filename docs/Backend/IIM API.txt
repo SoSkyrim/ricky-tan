@@ -1,0 +1,67 @@
+api_sign rules:
+1. a=1&c=4&b=9
+2. tokena1b9c4
+3. md5(tokena1b9c4)
+
+
+Server side process:
+1. Validate the sign
+2. Validate the API key, priviledges
+3. Get data based on the action and parameters
+4. Response the xml or json return
+
+
+Method:
+iim/api/?action=iim.auth.getToken
+Return:
+<auth>
+	<token>[token]</token>
+	<perms>[read/write]</perms>
+</auth>
+
+Method:
+iim/api/?action=iim.auth.authToken
+Post:
+Post the username/password
+Return:
+<auth>
+	<token>[token]</token>
+	<perms>[read/write]</perms>
+	<user id="xxxxxxx" email="xxxxxx" />
+</auth>
+
+Method:
+iim/api/?action=iim.email.getEmails&userid=[user id]&folderid=[folder id]&limit=[max number]&userid=[user id]&api_sign=[sign]
+Return:
+<emails>
+	<email id="xxx" send_at="xxxx">
+		<subject>xxxx</subject>
+		<body>xxxxx</body>
+		<attachment>4</attachment>
+	</email>
+	<email id="xxx" send_at="xxxx">
+		<subject>xxxx</subject>
+		<body>xxxxx</body>
+		<attachment>4</attachment>
+	</email>
+</emails>
+
+Method:
+iim/api/?action=iim.attachment.getAttachments&emailid=[email id]&userid=[user id]&api_sign=[sign]
+Return:
+<attachments>
+	<attachment id="xxx">
+		<filename>xxx</filename>
+		<filetype>xxx</filetype>
+		<size>xxx</size>
+		<path>xxx</path>
+		<status>xxx</status>
+	</attachment>
+	<attachment id="xxx">
+		<filename>xxx</filename>
+		<filetype>xxx</filetype>
+		<size>xxx</size>
+		<path>xxx</path>
+		<status>xxx</status>
+	</attachment>
+</attachments>
